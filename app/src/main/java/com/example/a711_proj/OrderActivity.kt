@@ -2,15 +2,16 @@ package com.example.a711_proj
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore.Audio.Radio
 import android.view.View
 import android.widget.*
 
 import com.example.a711_proj.databinding.ActivityMainBinding
 
-
-
 class OrderActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private  var total = 0
+    var  listValue = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,7 +24,8 @@ class OrderActivity : AppCompatActivity() {
         var imageId =  arrayOf(10)
         val listView: ListView = findViewById(R.id.list)
 
-        //handling radio buttons
+
+        //handling radio buttons for meat or vegetarian pizza
         val group = findViewById<View>(R.id.radioGroup) as RadioGroup
         group.setOnCheckedChangeListener { group, checkedId ->
             if (checkedId != -1) {
@@ -104,7 +106,7 @@ class OrderActivity : AppCompatActivity() {
 
                     // onclick event
                     listView.setOnItemClickListener { parent, _, position, _ ->
-                        val listValue = parent.getItemAtPosition(position) as String // better to call itemAtPos
+                         listValue = parent.getItemAtPosition(position) as String // better to call itemAtPos
                         val itemIdAtPos = parent.getItemIdAtPosition(position)// parent = adapterView
                         Toast.makeText(this, "You choose $listValue", Toast.LENGTH_LONG)
                             .show()
@@ -130,37 +132,78 @@ class OrderActivity : AppCompatActivity() {
 
     }
 
-    //handling chip group and chips
 
 
     //handling check boxes for side dishes
 
-    fun onCheckboxClicked(view: View) {
+    fun onCheckboxClicked(view: View): Int {
         val checked_smashed_potato = findViewById<View>(R.id.smashed_potato) as CheckBox
         val checked_garlic_bread = findViewById<View>(R.id.garlic_bread) as CheckBox
         val checked_house_salad = findViewById<View>(R.id.house_salad) as CheckBox
         val checked_mushroom_salad = findViewById<View>(R.id.mushroom_salad) as CheckBox
         var result = ""
+        var ingredients = ""
+
+
+        //handling radio buttons for sizes and caculate total price
+        val group2 = findViewById<View>(R.id.radioGroup2) as RadioGroup
+        group2.setOnCheckedChangeListener {group2, checkedId ->
+
+            if (checkedId != -1) {
+                val size = findViewById<View>(checkedId) as RadioButton
+                if (size.text == "Small(12')"){
+                    total = 18
+                }
+                else if (size.text == "Large(16')") {}
+                total = 22
+            }
+        }
 
         if (view is CheckBox ) {
             val checked: Boolean = view.isChecked
             if(checked_smashed_potato.isChecked || checked_garlic_bread.isChecked || checked_house_salad.isChecked ||checked_mushroom_salad.isChecked) {
                 if (view.id == R.id.smashed_potato) {
-                    result += "\n smashed potato"; } else if (view.id == R.id.garlic_bread) {
+                    result += "\n smashed potato";
+                    ingredients = "cheddar cheese"
+                total += 8 }
+                else if (view.id == R.id.garlic_bread) {
                     result += "\n garlic bread"
+                    ingredients = "Parmesan"
+                    total += 8
                 } else if (view.id == R.id.house_salad) {
                     result += "\n house salad"
+                    total += 8
+                    ingredients = "arugula, pickled veg, olives, fresh mozzarella, salsa verde"
                 } else if (view.id == R.id.mushroom_salad) {
                     result += "\n mushroom salad"
+                    total += 8
+                    ingredients = "kale, parmesan, croutons, lemon dressing"
                 }
             }
-            else if (view.id == null)  {  result += "\n no side dishes" }
-            Toast.makeText(this, "You chose $result" , Toast.LENGTH_LONG).show();
-
+            else if (view.id == null)  {  result += "\n no side dishes"
+                total += 0  }
+            Toast.makeText(this, "You chose $result : $ingredients" , Toast.LENGTH_LONG).show();
         }
+        return total
     }
+    //handling display of total
 
+    fun onCheckTotalClick (view: View){
+// how to check if size is not null?   only  val size = findViewById<View>(chooseBig) as RadioButton is not working
+
+        if (listValue !=null ){
+            val price_check = findViewById<TextView>(R.id.choose_your_pizza)
+            price_check.text= total.toString()
+        }
+        else { Toast.makeText(this, "Please choose at least one pizza & size", Toast.LENGTH_LONG)
+            .show()}
     }
+}
+// **********************************************Notes*****************************************************************************************
+//handle chip
+// if (checkedId == chip4.getId()) {
+//              selectedKey =   chip4.getText();
+
 
 // ref: customed expandable list, not listview
 //https://androidexample.com/custom-expandable-listview-tutorial
@@ -168,7 +211,7 @@ class OrderActivity : AppCompatActivity() {
 // exactly i need: https://www.javatpoint.com/kotlin-android-custom-listview
 //http://www.standardpizza.ca/menu-full
 
-
+//fun onCheckboxClicked(view: View) {
 //                when (view.id) {
 //                    R.id.smashed_potato -> {
 //                        if (checked) {
@@ -211,3 +254,4 @@ class OrderActivity : AppCompatActivity() {
 //                        Toast.makeText(this, "You didn't choose side dishes", Toast.LENGTH_LONG)
 //                            .show()
 //                    }
+//         }

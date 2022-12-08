@@ -7,16 +7,32 @@
     android:orientation="vertical"
     tools:context=".OrderActivity"
    >
-
-
-    <TextView
-        android:id="@+id/textView"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Choose your pizza"
-        android:textAlignment="center"
-        android:textSize="34sp"
-        android:textStyle="bold" />
+        android:weightSum="4">
+
+        <TextView
+            android:id="@+id/choose_your_pizza"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="total:"
+            android:textAlignment="center"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            android:layout_weight="3"
+           />
+        <Button
+            android:id="@+id/confirm_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Done"
+            android:layout_weight="1"
+            android:onClick="onCheckTotalClick"/>
+
+    </LinearLayout>
+
+
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -31,10 +47,10 @@
 
         <RadioButton
             android:id="@+id/chooseMeat"
-            android:layout_width="match_parent"
+            android:layout_width="162dp"
             android:layout_height="wrap_content"
-            android:text="Meat"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:text="Meat" />
 
         <RadioButton
             android:id="@+id/chooseVegie"
@@ -207,11 +223,8 @@
             style="@style/Widget.MaterialComponents.Chip.Choice" />
     </com.google.android.material.chip.ChipGroup>
 
-    <Button
-        android:id="@+id/confirm_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Confirm" />
+
+
 
 </LinearLayout>
 
