@@ -27,4 +27,13 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="163dp" />
 
+    <Button
+        android:id="@+id/loginOnLaunchScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login to plcae order"
+        android:onClick="navigateToLogin"
+        tools:layout_editor_absoluteX="99dp"
+        tools:layout_editor_absoluteY="623dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

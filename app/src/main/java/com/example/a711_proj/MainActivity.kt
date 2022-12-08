@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
+import android.view.View
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,7 +18,10 @@ class MainActivity : AppCompatActivity() {
         menuInflater.inflate(R.menu.menu, menu)
         return true
     }
-
+    fun navigateToLogin(v: View) {
+        var intent = Intent(this@MainActivity, LoginActivity::class.java)
+        startActivity(intent)
+    }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         var intent = Intent(this@MainActivity, OrderActivity::class.java)
@@ -41,7 +44,6 @@ class MainActivity : AppCompatActivity() {
                 setContentView(R.layout.activity_view_order)
                 val i = Intent(this@MainActivity, ViewOrderActivity::class.java)
                 startActivity(i)
-
             }
             R.id.store_locations -> {
                 setContentView(R.layout.activity_store_locator)

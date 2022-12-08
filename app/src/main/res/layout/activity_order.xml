@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".OrderActivity">
+    tools:context=".OrderActivity"
+   >
 
 
     <TextView
@@ -16,12 +17,197 @@
         android:textAlignment="center"
         android:textSize="34sp"
         android:textStyle="bold" />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:weightSum="4">
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="2">
+
+        <RadioButton
+            android:id="@+id/chooseMeat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Meat"
+            android:layout_weight="1"/>
+
+        <RadioButton
+            android:id="@+id/chooseVegie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Vegetarian" />
+        <!--android:onClick="onRadioButtonClicked"-->
+    </RadioGroup>
+    <RadioGroup
+        android:id="@+id/radioGroup2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="2">
+
+
+
+        <RadioButton
+            android:id="@+id/chooseSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Small(12')" />
+        <!--android:onClick="onRadioButtonClicked"-->
+        <RadioButton
+            android:id="@+id/chooseBig"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Large(16')"
+            android:layout_weight="1"/>
+
+    </RadioGroup>
+</LinearLayout>
+
 
     <ListView
         android:id="@+id/list"
         android:layout_width="match_parent"
+        android:layout_height="450dp" />
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Choose your side dishes ($8 e.a.)"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="4">
 
+
+        <CheckBox
+            android:id="@+id/smashed_potato"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="smashed potatos"
+            android:onClick="onCheckboxClicked"/>
+
+        <CheckBox
+            android:id="@+id/garlic_bread"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="garlic bread"
+            android:onClick="onCheckboxClicked"/>
+
+        <CheckBox
+            android:id="@+id/mushroom_salad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="mushroom salad"
+            android:onClick="onCheckboxClicked"/>
+
+        <CheckBox
+            android:id="@+id/house_salad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="house salad"
+            android:onClick="onCheckboxClicked"/>
+
+
+<!--        GARLIC BREAD-->
+<!--        Parmesan-->
+<!--        12-->
+<!--        MUSHROOM SALAD-->
+<!--        kale, parmesan, croutons, lemon dressing-->
+<!--        12-->
+<!--        HOUSE SALAD-->
+<!--        arugula, pickled veg, olives, fresh mozzarella, salsa verde-->
+    </LinearLayout>
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:weightSum="4"/>-->
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Choose your extra toppings ($8 e.a.)"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+    <com.google.android.material.chip.ChipGroup
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipOnion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="caramelized onion"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipParmesan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="parmesan"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipPepper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="spicy peppers"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipArugula"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="arugula"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipRicotta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ricotta"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipCheese"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="extra cheese"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipBacon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="bacon"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipSalami"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="salami"/>
+    </com.google.android.material.chip.ChipGroup>
+
+    <Button
+        android:id="@+id/confirm_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Confirm" />
 
 </LinearLayout>
+
+<!--    TOPPINGS (S/L)-->
+<!--    ,  , mushrooms, anchovy, olives, kale, egg yolk, -->
+<!--    2 / 4-->
+<!--    TOPPINGS (S/L)-->
+<!--    , , pepperoni, sausage, , , capicollo-->
