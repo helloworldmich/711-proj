@@ -4,9 +4,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.*
+
 import com.example.a711_proj.databinding.ActivityMainBinding
 
+
+
 class OrderActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_order)
@@ -109,26 +114,52 @@ class OrderActivity : AppCompatActivity() {
         }
 
 
-        //handling check boxes for side dishes
+        initalizeCheckBox()
+        //setting up biding for chip group
+        //https://tutorialwing.com/chipgroup-using-kotlin-with-example/
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
+//        setContentView(view)       // must not add this, otherwise, all radiogroup, list etc becaomes null
+        }               // ------------------>onCreate finished here
 
-        fun onCheckboxClicked(view: View) {
-            if (view is CheckBox) {
-                val checked: Boolean = view.isChecked
-                var result = ""
-                if (view.id == R.id.smashed_potato)  {  result += "\n smashed potato";  }
-                else  if (view.id == R.id.garlic_bread)  {   result += "\n garlic bread" }
-                else  if (view.id == R.id.house_salad)  {  result += "\n house salad" }
-                else  if (view.id == R.id.mushroom_salad)  {  result += "\n mushroom salad" }
-                else if (view.id == null)  {  result += "\n no side dishes" }
-                Toast.makeText(this, "You chose $result" , Toast.LENGTH_LONG).show();
+     fun initalizeCheckBox (){
+        val checked_smashed_potato = findViewById<View>(R.id.smashed_potato) as CheckBox
+        val checked_garlic_bread = findViewById<View>(R.id.garlic_bread) as CheckBox
+        val checked_house_salad = findViewById<View>(R.id.house_salad) as CheckBox
+        val checked_mushroom_salad = findViewById<View>(R.id.mushroom_salad) as CheckBox
 
+    }
+
+    //handling chip group and chips
+
+
+    //handling check boxes for side dishes
+
+    fun onCheckboxClicked(view: View) {
+        val checked_smashed_potato = findViewById<View>(R.id.smashed_potato) as CheckBox
+        val checked_garlic_bread = findViewById<View>(R.id.garlic_bread) as CheckBox
+        val checked_house_salad = findViewById<View>(R.id.house_salad) as CheckBox
+        val checked_mushroom_salad = findViewById<View>(R.id.mushroom_salad) as CheckBox
+        var result = ""
+
+        if (view is CheckBox ) {
+            val checked: Boolean = view.isChecked
+            if(checked_smashed_potato.isChecked || checked_garlic_bread.isChecked || checked_house_salad.isChecked ||checked_mushroom_salad.isChecked) {
+                if (view.id == R.id.smashed_potato) {
+                    result += "\n smashed potato"; } else if (view.id == R.id.garlic_bread) {
+                    result += "\n garlic bread"
+                } else if (view.id == R.id.house_salad) {
+                    result += "\n house salad"
+                } else if (view.id == R.id.mushroom_salad) {
+                    result += "\n mushroom salad"
                 }
             }
-
-
-        //handling chip group and chips
+            else if (view.id == null)  {  result += "\n no side dishes" }
+            Toast.makeText(this, "You chose $result" , Toast.LENGTH_LONG).show();
 
         }
+    }
+
     }
 
 // ref: customed expandable list, not listview

@@ -141,61 +141,70 @@
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Choose your extra toppings ($8 e.a.)"
+        android:text="Choose your extra toppings ($2 e.a.)"
         android:textAlignment="center"
         android:textSize="20sp"
         android:textStyle="bold" />
     <com.google.android.material.chip.ChipGroup
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:id= "@+id/chipGroup" >
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipOnion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="caramelized onion"/>
+            android:text="caramelized onion"
+            style="@style/Widget.MaterialComponents.Chip.Choice" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipParmesan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="parmesan"/>
+            android:text="parmesan"
+            style="@style/Widget.MaterialComponents.Chip.Choice" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipPepper"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="spicy peppers"/>
+            android:text="spicy peppers"
+            style="@style/Widget.MaterialComponents.Chip.Choice" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipArugula"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="arugula"/>
+            android:text="arugula"
+            style="@style/Widget.MaterialComponents.Chip.Choice" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipRicotta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ricotta"/>
+            android:text="ricotta"
+            style="@style/Widget.MaterialComponents.Chip.Choice" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipCheese"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="extra cheese"/>
+            android:text="extra cheese"
+            style="@style/Widget.MaterialComponents.Chip.Choice" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipBacon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="bacon"/>
+            android:text="bacon"
+            style="@style/Widget.MaterialComponents.Chip.Choice" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipSalami"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="salami"/>
+            android:text="salami"
+            style="@style/Widget.MaterialComponents.Chip.Choice" />
     </com.google.android.material.chip.ChipGroup>
 
     <Button
