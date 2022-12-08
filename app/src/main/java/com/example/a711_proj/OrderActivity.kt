@@ -161,25 +161,46 @@ class OrderActivity : AppCompatActivity() {
 
         if (view is CheckBox ) {
             val checked: Boolean = view.isChecked
-            if(checked_smashed_potato.isChecked || checked_garlic_bread.isChecked || checked_house_salad.isChecked ||checked_mushroom_salad.isChecked) {
+//            if(checked_smashed_potato.isChecked || checked_garlic_bread.isChecked || checked_house_salad.isChecked ||checked_mushroom_salad.isChecked) {
                 if (view.id == R.id.smashed_potato) {
-                    result += "\n smashed potato";
-                    ingredients = "cheddar cheese"
-                total += 8 }
-                else if (view.id == R.id.garlic_bread) {
-                    result += "\n garlic bread"
-                    ingredients = "Parmesan"
-                    total += 8
-                } else if (view.id == R.id.house_salad) {
-                    result += "\n house salad"
-                    total += 8
-                    ingredients = "arugula, pickled veg, olives, fresh mozzarella, salsa verde"
-                } else if (view.id == R.id.mushroom_salad) {
-                    result += "\n mushroom salad"
-                    total += 8
-                    ingredients = "kale, parmesan, croutons, lemon dressing"
+                    if (checked_smashed_potato.isChecked){
+                        result += "\n smashed potato";
+                        ingredients = "cheddar cheese"
+                        total += 8
+                    }
+                    else if (checked_smashed_potato.isChecked== false){
+                        total -= 8
+                    }
                 }
-            }
+                else if (view.id == R.id.garlic_bread) {
+                    if (checked_garlic_bread.isChecked){
+                        result += "\n garlic bread"
+                        ingredients = "Parmesan"
+                        total += 8
+                    }
+                    else {
+                        total -= 8
+                    }
+                } else if (view.id == R.id.house_salad) {
+                    if (checked_house_salad.isChecked){
+                        result += "\n house salad"
+                        total += 8
+                        ingredients = "arugula, pickled veg, olives, fresh mozzarella, salsa verde"
+                    }
+                    else {
+                        total -= 8
+                    }
+                } else if (view.id == R.id.mushroom_salad) {
+                    if (checked_mushroom_salad.isChecked){
+                        result += "\n mushroom salad"
+                        total += 8
+                        ingredients = "kale, parmesan, croutons, lemon dressing"
+                    }
+                    else {
+                        total -= 8
+                    }
+                }
+//            }
             else if (view.id == null)  {  result += "\n no side dishes"
                 total += 0  }
             Toast.makeText(this, "You chose $result : $ingredients" , Toast.LENGTH_LONG).show();
