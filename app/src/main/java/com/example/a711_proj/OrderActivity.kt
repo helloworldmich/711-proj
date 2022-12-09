@@ -10,7 +10,7 @@ import com.example.a711_proj.databinding.ActivityMainBinding
 
 class OrderActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    private  var total = 0
+    private var total = 0
     var  listValue = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -137,6 +137,7 @@ class OrderActivity : AppCompatActivity() {
     //handling check boxes for side dishes
 
     fun onCheckboxClicked(view: View): Int {
+
         val checked_smashed_potato = findViewById<View>(R.id.smashed_potato) as CheckBox
         val checked_garlic_bread = findViewById<View>(R.id.garlic_bread) as CheckBox
         val checked_house_salad = findViewById<View>(R.id.house_salad) as CheckBox
@@ -151,11 +152,11 @@ class OrderActivity : AppCompatActivity() {
 
             if (checkedId != -1) {
                 val size = findViewById<View>(checkedId) as RadioButton
-                if (size.text == "Small(12')"){
+                if (size.text == "Small(12')") {
                     total = 18
+                } else if (size.text == "Large(16')") {
+                    total = 22
                 }
-                else if (size.text == "Large(16')") {}
-                total = 22
             }
         }
 
@@ -212,9 +213,9 @@ class OrderActivity : AppCompatActivity() {
     fun onCheckTotalClick (view: View){
 // how to check if size is not null?   only  val size = findViewById<View>(chooseBig) as RadioButton is not working
 
-        if (listValue !=null ){
+        if (listValue != null ){
             val price_check = findViewById<TextView>(R.id.choose_your_pizza)
-            price_check.text= total.toString()
+            price_check.text= ("Total: $$total").toString()
         }
         else { Toast.makeText(this, "Please choose at least one pizza & size", Toast.LENGTH_LONG)
             .show()}

@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".OrderActivity"
-   >
+    tools:context=".OrderActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,81 +16,83 @@
             android:id="@+id/choose_your_pizza"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="total:"
+            android:layout_weight="3"
+            android:text="Total:"
             android:textAlignment="center"
             android:textSize="34sp"
-            android:textStyle="bold"
-            android:layout_weight="3"
-           />
+            android:textStyle="bold" />
+
         <Button
             android:id="@+id/confirm_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Done"
             android:layout_weight="1"
-            android:onClick="onCheckTotalClick"/>
+            android:onClick="onCheckTotalClick"
+            android:text="Done" />
 
     </LinearLayout>
 
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:weightSum="4">
-
-    <RadioGroup
-        android:id="@+id/radioGroup"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_weight="2">
+        android:weightSum="4">
 
-        <RadioButton
-            android:id="@+id/chooseMeat"
-            android:layout_width="162dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Meat" />
-
-        <RadioButton
-            android:id="@+id/chooseVegie"
+        <RadioGroup
+            android:id="@+id/radioGroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Vegetarian" />
-        <!--android:onClick="onRadioButtonClicked"-->
-    </RadioGroup>
-    <RadioGroup
-        android:id="@+id/radioGroup2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_weight="2">
+            android:layout_weight="2"
+            android:orientation="horizontal">
 
+            <RadioButton
+                android:id="@+id/chooseMeat"
+                android:layout_width="162dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Meat" />
 
+            <RadioButton
+                android:id="@+id/chooseVegie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Vegetarian" />
+            <!--android:onClick="onRadioButtonClicked"-->
+        </RadioGroup>
 
-        <RadioButton
-            android:id="@+id/chooseSmall"
+        <RadioGroup
+            android:id="@+id/radioGroup2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Small(12')" />
-        <!--android:onClick="onRadioButtonClicked"-->
-        <RadioButton
-            android:id="@+id/chooseBig"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Large(16')"
-            android:layout_weight="1"/>
+            android:layout_weight="2"
+            android:orientation="horizontal">
 
-    </RadioGroup>
-</LinearLayout>
+            <RadioButton
+                android:id="@+id/chooseSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onCheckboxClicked"
+                android:text="Small(12')" />
 
+            <RadioButton
+                android:id="@+id/chooseBig"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onCheckboxClicked"
+                android:text="Large(16')" />
+
+        </RadioGroup>
+
+    </LinearLayout>
 
     <ListView
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="450dp" />
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
@@ -99,6 +101,7 @@
         android:textAlignment="center"
         android:textSize="20sp"
         android:textStyle="bold" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -110,47 +113,47 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="smashed potatos"
-            android:onClick="onCheckboxClicked"/>
+            android:onClick="onCheckboxClicked"
+            android:text="smashed potatos" />
 
         <CheckBox
             android:id="@+id/garlic_bread"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="garlic bread"
-            android:onClick="onCheckboxClicked"/>
+            android:onClick="onCheckboxClicked"
+            android:text="garlic bread" />
 
         <CheckBox
             android:id="@+id/mushroom_salad"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="mushroom salad"
-            android:onClick="onCheckboxClicked"/>
+            android:onClick="onCheckboxClicked"
+            android:text="mushroom salad" />
 
         <CheckBox
             android:id="@+id/house_salad"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="house salad"
-            android:onClick="onCheckboxClicked"/>
+            android:onClick="onCheckboxClicked"
+            android:text="house salad" />
 
 
-<!--        GARLIC BREAD-->
-<!--        Parmesan-->
-<!--        12-->
-<!--        MUSHROOM SALAD-->
-<!--        kale, parmesan, croutons, lemon dressing-->
-<!--        12-->
-<!--        HOUSE SALAD-->
-<!--        arugula, pickled veg, olives, fresh mozzarella, salsa verde-->
+        <!--        GARLIC BREAD-->
+        <!--        Parmesan-->
+        <!--        12-->
+        <!--        MUSHROOM SALAD-->
+        <!--        kale, parmesan, croutons, lemon dressing-->
+        <!--        12-->
+        <!--        HOUSE SALAD-->
+        <!--        arugula, pickled veg, olives, fresh mozzarella, salsa verde-->
     </LinearLayout>
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:weightSum="4"/>-->
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:weightSum="4"/>-->
 
 
     <TextView
@@ -161,75 +164,74 @@
         android:textAlignment="center"
         android:textSize="20sp"
         android:textStyle="bold" />
+
     <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroup"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id= "@+id/chipGroup" >
+        android:layout_height="match_parent">
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipOnion"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="caramelized onion"
-            style="@style/Widget.MaterialComponents.Chip.Choice" />
+            android:text="caramelized onion" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipParmesan"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="parmesan"
-            style="@style/Widget.MaterialComponents.Chip.Choice" />
+            android:text="parmesan" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipPepper"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="spicy peppers"
-            style="@style/Widget.MaterialComponents.Chip.Choice" />
+            android:text="spicy peppers" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipArugula"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="arugula"
-            style="@style/Widget.MaterialComponents.Chip.Choice" />
+            android:text="arugula" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipRicotta"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ricotta"
-            style="@style/Widget.MaterialComponents.Chip.Choice" />
+            android:text="ricotta" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipCheese"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="extra cheese"
-            style="@style/Widget.MaterialComponents.Chip.Choice" />
+            android:text="extra cheese" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipBacon"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="bacon"
-            style="@style/Widget.MaterialComponents.Chip.Choice" />
+            android:text="bacon" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipSalami"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="salami"
-            style="@style/Widget.MaterialComponents.Chip.Choice" />
+            android:text="salami" />
     </com.google.android.material.chip.ChipGroup>
-
-
 
 
 </LinearLayout>
 
-<!--    TOPPINGS (S/L)-->
-<!--    ,  , mushrooms, anchovy, olives, kale, egg yolk, -->
-<!--    2 / 4-->
-<!--    TOPPINGS (S/L)-->
-<!--    , , pepperoni, sausage, , , capicollo-->
+    <!--    TOPPINGS (S/L)-->
+    <!--    ,  , mushrooms, anchovy, olives, kale, egg yolk, -->
+    <!--    2 / 4-->
+    <!--    TOPPINGS (S/L)-->
+    <!--    , , pepperoni, sausage, , , capicollo-->
