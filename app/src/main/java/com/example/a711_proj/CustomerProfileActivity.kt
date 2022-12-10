@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.a711_proj.CustomerInfoDataClass
@@ -75,7 +76,11 @@ class CustomerProfileActivity : AppCompatActivity() {
 
         //show button event handler
         btnShow.setOnClickListener(){
-
+            var clientName = ""
+            var clientPhone = ""
+            var clientAddress = ""
+            var clientPostalCode = ""
+            var clientCity = ""
             //event handler for dbRef object to read the values
             dbRef.addValueEventListener(object : ValueEventListener {
                 //onDataChanged fun to initializing dataSnapshot object
@@ -85,11 +90,13 @@ class CustomerProfileActivity : AppCompatActivity() {
                         return
                     }
                     // reading the values
-                    val clientName=customer?.customerName.toString()
-                    val clientPhone=customer?.customerPhone.toString()
-                    val clientAddress=customer?.customerAddress.toString()
-                    val clientPostalCode=customer?.customerPostalCode.toString()
-                    val clientCity=customer?.customerCity.toString()
+                     clientName=customer?.customerName.toString()
+                     clientPhone=customer?.customerPhone.toString()
+                     clientAddress=customer?.customerAddress.toString()
+                     clientPostalCode=customer?.customerPostalCode.toString()
+                     clientCity=customer?.customerCity.toString()
+
+                    println(clientName)
 
                     //display as a toast message
                     Toast.makeText(applicationContext, "Welcome to our Pizza App, your info: "+ clientName +" "+clientPhone+" "+clientAddress+" "+clientPostalCode+" "+clientCity, Toast.LENGTH_LONG).show()
@@ -98,7 +105,12 @@ class CustomerProfileActivity : AppCompatActivity() {
                 override fun onCancelled(error: DatabaseError) {
                     //
                 }
+
+
             })
+            println(clientName)
+            var showClientInfo = findViewById<TextView>(R.id.showClientInfo)
+            showClientInfo.text= clientName
         }
 
     }
