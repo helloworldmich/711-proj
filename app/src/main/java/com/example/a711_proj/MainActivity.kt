@@ -25,8 +25,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         var intent = Intent(this@MainActivity, OrderActivity::class.java)
-        val sharedPrefPhoneModel: SharedPreferences = this.getSharedPreferences("MyPref", MODE_PRIVATE)
-        val editor: SharedPreferences.Editor = sharedPrefPhoneModel.edit()
+//        val sharedPrefPhoneModel: SharedPreferences = this.getSharedPreferences("MyPref", MODE_PRIVATE)
+//        val editor: SharedPreferences.Editor = sharedPrefPhoneModel.edit()
 
         when (item.itemId) {
             R.id.order -> {
@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
             }
 
         }
-        editor.commit()
+//        editor.commit()
         startActivity(intent)
         return true
     }

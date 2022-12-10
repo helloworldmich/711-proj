@@ -146,11 +146,12 @@
             android:textSize="24sp" />
 
         <Spinner
+            android:id="@+id/cardType"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/cardType"
-            />
-        <!--            android:entries="@array/cardTypes"-->
+            android:entries="@array/cardTypes"
+            android:scrollbarSize="6dp" />
+
         />
     </LinearLayout>
     <LinearLayout
@@ -188,7 +189,7 @@
             android:textSize="24sp" />
 
         <EditText
-            android:id="@+id/cardCvv"
+            android:id="@+id/cardCVV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -202,7 +203,8 @@
         android:id="@+id/submitButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Place your order" />
+        android:text="Place your order"
+        android:onClick="placeOrder"/>
 
     <Button
         android:id="@+id/output_order"
@@ -210,6 +212,6 @@
         android:layout_height="wrap_content"
         android:text="Get Receipt" />
 
-    <!--                        android:text="@string/button_place_order"-->
+    <!--android:text="@string/button_place_order"-->
 <!--    android:onClick="placeOrder"-->
 </LinearLayout>

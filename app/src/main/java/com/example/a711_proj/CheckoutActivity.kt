@@ -11,6 +11,7 @@ class CheckoutActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_checkout)
+
     }
 
     fun placeOrder(view: View){
@@ -23,7 +24,7 @@ class CheckoutActivity : AppCompatActivity() {
         val phoneNumber = findViewById<EditText>(R.id.telephone)
         val creditCard = findViewById<EditText>(R.id.cardNumber)
         val expirationDate = findViewById<EditText>(R.id.cardExpiry)
-        val cvv = findViewById<EditText>(R.id.cardCvv)
+        val cvv = findViewById<EditText>(R.id.cardCVV)
         // get card type from spinner
         val cardTypeText = findViewById<android.widget.Spinner>(R.id.cardType).selectedItem.toString()
 
@@ -48,7 +49,10 @@ class CheckoutActivity : AppCompatActivity() {
         editor.putString("cardCvv", cvv.text.toString())
         editor.commit()
 
+
         // start the summary activity
         startActivity(intent)
     }
+
+
 }

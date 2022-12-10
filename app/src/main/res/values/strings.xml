@@ -13,4 +13,12 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="no_account_register_now" />
     <string name="already_have_an_account_login_now" />
+
+
+
+    <string-array name="cardTypes">
+        <item>Visa</item>
+        <item>MasterCard</item>
+        <item>American Express</item>
+    </string-array>
 </resources>

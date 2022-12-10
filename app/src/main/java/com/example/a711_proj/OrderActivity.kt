@@ -1,5 +1,7 @@
 package com.example.a711_proj
 
+import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore.Audio.Radio
@@ -12,18 +14,14 @@ class OrderActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private var total = 0
     var  listValue = ""
-
+    var pizza = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_order)
 
-        var sharedPref = getSharedPreferences("pizzaPref", MODE_PRIVATE)
-        var pizzaType = sharedPref.getString("pizzaType", "")
         var pizzaChoices = arrayOf("")
         var description = arrayOf(" ")
         var imageId =  arrayOf(10)
-        val listView: ListView = findViewById(R.id.list)
-
 
         //handling radio buttons for meat or vegetarian pizza
         val group = findViewById<View>(R.id.radioGroup) as RadioGroup
@@ -43,13 +41,13 @@ class OrderActivity : AppCompatActivity() {
                             "Sichuan Spicy Chicken"
                         )
                          description = arrayOf<String>(
-                            "tomato, garlic, cheese, oregano         $18 / 32",
-                            " tomato, cheese, spicy peppers, basil   $18 / 32",
-                            "tomato, cheese, salami, olives, honey, chili     $18 / 32",
-                            "cheese, garlic, egg yolk, herbs, black pepper    $18 / 32",
-                            "tomato, cheese, capicollo, spicy peppers, pineapple, basil   $18 / 32",
-                            "tomato, cheese, pepperoni, sausage, bacon, garlic, oregano $18 / 32",
-                            "chicken, Sichuan chili, sesame oil, pineapple    $18 / 32"
+                            "tomato, garlic, cheese, oregano         $18 / 22",
+                            " tomato, cheese, spicy peppers, basil   $18 / 22",
+                            "tomato, cheese, salami, olives, honey, chili     $18 / 22",
+                            "cheese, garlic, egg yolk, herbs, black pepper    $18 / 22",
+                            "tomato, cheese, capicollo, spicy peppers, pineapple, basil   $18 / 22",
+                            "tomato, cheese, pepperoni, sausage, bacon, garlic, oregano $18 / 22",
+                            "chicken, Sichuan chili, sesame oil, pineapple    $18 / 22"
                         )
                          imageId = arrayOf<Int>(
                             R.drawable.pepperoni_img,
@@ -73,15 +71,15 @@ class OrderActivity : AppCompatActivity() {
                             "VEGETARIAN"
                         )
                          description = arrayOf<String>(
-                            "tomato, garlic, basil, caper, olive oil (no cheese)  $14 / 24",
-                            "tomato, garlic, caper, olive (no cheese)  $15 / 26",
-                            "tomato, cheese    $14 / 24",
-                            "tomato, cheese, basil, olive oil   $15 / 26",
-                            "cream, cheese, ricotta, caramelized onions, arugula  $17 / 30",
-                            "cream, cheese, garlic chili, lemon   $17 / 30",
-                            "cream, cheese, parmesan, herbs   $17 / 30",
-                            "tomato, cheese, red onion, basil, garlic, caper  $18 / 32",
-                            "tomato, cheese, kale, mushroom, olive, onion   $18 / 32"
+                            "tomato, garlic, basil, caper, olive oil (no cheese)  $18 / 22",
+                            "tomato, garlic, caper, olive (no cheese)  $18 / 22",
+                            "tomato, cheese    $18 / 22",
+                            "tomato, cheese, basil, olive oil   $18 / 22",
+                            "cream, cheese, ricotta, caramelized onions, arugula  $18 / 22",
+                            "cream, cheese, garlic chili, lemon   $18 / 22",
+                            "cream, cheese, parmesan, herbs   $18 / 22",
+                            "tomato, cheese, red onion, basil, garlic, caper  $18 / 22",
+                            "tomato, cheese, kale, mushroom, olive, onion   $18 / 22"
 
                         )
                          imageId = arrayOf<Int>(R.drawable.pizza_img,
@@ -99,17 +97,22 @@ class OrderActivity : AppCompatActivity() {
 //                    val arrayAdapter =
 //                        ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, pList)
 
-
+                    // access the listView
+                    val listView: ListView = findViewById(R.id.list)
                     val myListAdapter = ListAdapter(this,pizzaChoices,description,imageId)
                     //attach the list view to the array adapter
                     listView.adapter = myListAdapter
 
                     // onclick event
                     listView.setOnItemClickListener { parent, _, position, _ ->
-                         listValue = parent.getItemAtPosition(position) as String // better to call itemAtPos
+
+                        listValue = parent.getItemAtPosition(position) as String // better to call itemAtPos
                         val itemIdAtPos = parent.getItemIdAtPosition(position)// parent = adapterView
+
                         Toast.makeText(this, "You choose $listValue", Toast.LENGTH_LONG)
                             .show()
+
+                        pizza = listValue
                     }
                 }
             }
@@ -132,9 +135,7 @@ class OrderActivity : AppCompatActivity() {
 
     }
 
-
-
-    //handling check boxes for side dishes
+    //handling check boxes for side dishes, pizza and calculate the total
 
     fun onCheckboxClicked(view: View): Int {
 
@@ -145,17 +146,20 @@ class OrderActivity : AppCompatActivity() {
         var result = ""
         var ingredients = ""
 
+        val sharedPref: SharedPreferences = this.getSharedPreferences("MyPref", MODE_PRIVATE)
+        val editor: SharedPreferences.Editor = sharedPref.edit()
 
         //handling radio buttons for sizes and caculate total price
         val group2 = findViewById<View>(R.id.radioGroup2) as RadioGroup
         group2.setOnCheckedChangeListener {group2, checkedId ->
-
             if (checkedId != -1) {
                 val size = findViewById<View>(checkedId) as RadioButton
                 if (size.text == "Small(12')") {
                     total = 18
+                    editor.putString("size","Small")
                 } else if (size.text == "Large(16')") {
                     total = 22
+                    editor.putString("size","Large")
                 }
             }
         }
@@ -168,6 +172,7 @@ class OrderActivity : AppCompatActivity() {
                         result += "\n smashed potato";
                         ingredients = "cheddar cheese"
                         total += 8
+                        editor.putString("smashed potato","smashed potato")
                     }
                     else if (checked_smashed_potato.isChecked== false){
                         total -= 8
@@ -178,6 +183,7 @@ class OrderActivity : AppCompatActivity() {
                         result += "\n garlic bread"
                         ingredients = "Parmesan"
                         total += 8
+                        editor.putString("garlic bread","garlic bread")
                     }
                     else {
                         total -= 8
@@ -187,6 +193,7 @@ class OrderActivity : AppCompatActivity() {
                         result += "\n house salad"
                         total += 8
                         ingredients = "arugula, pickled veg, olives, fresh mozzarella, salsa verde"
+                        editor.putString("house salad","house salad")
                     }
                     else {
                         total -= 8
@@ -196,6 +203,7 @@ class OrderActivity : AppCompatActivity() {
                         result += "\n mushroom salad"
                         total += 8
                         ingredients = "kale, parmesan, croutons, lemon dressing"
+                        editor.putString("mushroom salad","mushroom salad")
                     }
                     else {
                         total -= 8
@@ -203,23 +211,37 @@ class OrderActivity : AppCompatActivity() {
                 }
 //            }
             else if (view.id == null)  {  result += "\n no side dishes"
-                total += 0  }
+                total += 0
+                    editor.putString("no side dishes","no side dishes")
+            }
             Toast.makeText(this, "You chose $result : $ingredients" , Toast.LENGTH_LONG).show();
         }
+        editor.commit()    // need return true??? -->may not
         return total
     }
-    //handling display of total
 
+    //handling confirmation and display of total
     fun onCheckTotalClick (view: View){
-// how to check if size is not null?   only  val size = findViewById<View>(chooseBig) as RadioButton is not working
+        val sharedPref: SharedPreferences = this.getSharedPreferences("MyPref", MODE_PRIVATE)
+        val editor: SharedPreferences.Editor = sharedPref.edit()
+        editor.putString("total",total.toString())
+        editor.putString("pizza name",pizza)
+        val intent = Intent(this, CheckoutActivity::class.java)
 
+// how to check if size is not null?   only  val size = findViewById<View>(chooseBig) as RadioButton is not working
         if (listValue != null ){
             val price_check = findViewById<TextView>(R.id.choose_your_pizza)
             price_check.text= ("Total: $$total").toString()
+
         }
         else { Toast.makeText(this, "Please choose at least one pizza & size", Toast.LENGTH_LONG)
             .show()}
+
+        // start the checkout activity
+        startActivity(intent)
+        editor.commit()
     }
+
 }
 // **********************************************Notes*****************************************************************************************
 //handle chip

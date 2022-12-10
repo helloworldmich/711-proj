@@ -38,59 +38,66 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pizza:"
-        android:textSize="24sp" />
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pizza:   "
+            android:textSize="24sp" />
 
     <TextView
-        android:id="@+id/pizza"
+        android:id="@+id/pizzaName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="(pizza)"
         android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(size)"
+            android:textSize="24sp" />
 </LinearLayout>
 
 
+<!--    <LinearLayout-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal">-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/textView11"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Toppings:"-->
+<!--            android:textSize="24sp" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/toppings"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="(toppings)"-->
+<!--            android:textSize="24sp" />-->
+
+<!--    </LinearLayout>-->
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/textView11"
+            android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Toppings:"
+            android:text="Sides Dishes:  "
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/toppings"
+            android:id="@+id/sideDishes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="(toppings)"
-            android:textSize="24sp" />
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/texteView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Meal Set"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/mealSet"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="(mealset)"
+            android:text="(side dishes)"
             android:textSize="24sp" />
     </LinearLayout>
     <LinearLayout
@@ -102,11 +109,11 @@
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Total Price:"
+            android:text="Total Price:  "
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/totalPrice"
+            android:id="@+id/total"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="(total price)"
@@ -152,11 +159,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <TextView
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name"
+            android:text="Name:   "
             android:textSize="24sp" />
 
         <TextView
@@ -164,7 +172,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textSize="24sp" />
 
     </LinearLayout>
 
@@ -173,11 +182,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <TextView
             android:id="@+id/textView13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Address"
+            android:text="Address:   "
             android:textSize="24sp" />
 
         <TextView
@@ -185,7 +195,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textSize="16sp" />
 
     </LinearLayout>
     <LinearLayout
@@ -197,7 +208,7 @@
             android:id="@+id/textView15"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="City"
+            android:text="City:   "
             android:textSize="24sp" />
 
         <TextView
@@ -205,18 +216,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textSize="24sp" />
 
     </LinearLayout>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <TextView
             android:id="@+id/textView16"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Postal Code"
+            android:text="Postal Code:   "
             android:textSize="24sp" />
 
         <TextView
@@ -224,18 +237,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textSize="24sp" />
 
     </LinearLayout>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <TextView
             android:id="@+id/textView17"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Telephone"
+            android:text="Telephone:   "
             android:textSize="24sp" />
 
         <TextView
@@ -243,7 +258,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textSize="20sp" />
 
 
     </LinearLayout>
@@ -256,7 +272,7 @@
             android:id="@+id/textView18"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Card Number"
+            android:text="Card Number:  "
             android:textSize="24sp" />
 
         <TextView
@@ -264,7 +280,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textSize="24sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -276,14 +293,15 @@
             android:id="@+id/textView19"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Card Type:"
+            android:text="Card Type:  "
             android:textSize="24sp" />
 
-        <Spinner
+        <TextView
+            android:id="@+id/cardType"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/cardType"
-            />
+            android:text="(card type) "
+            android:textSize="24sp" />
         <!--            android:entries="@array/cardTypes"-->
         />
     </LinearLayout>
@@ -296,15 +314,15 @@
             android:id="@+id/textView20"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Expiry Date(mm/yy)"
+            android:text="Expiry Date(mm/yy):  "
             android:textSize="24sp" />
 
         <TextView
             android:id="@+id/cardExpiry"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName" />
+            android:text="                 "
+            android:textSize="24sp" />
 
     </LinearLayout>
 
@@ -318,18 +336,25 @@
             android:id="@+id/textView21"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="CVV"
+            android:text="CVV:   "
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/cardCvv"
+            android:id="@+id/cardCVV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textSize="24sp" />
 
 
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/finish_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Finish Thank You for Your Order" />
 
 </LinearLayout>
