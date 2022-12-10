@@ -76,7 +76,8 @@
                 android:layout_weight="1"
                 android:onClick="onCheckboxClicked"
                 android:text="Small(12')"
-                android:checked="true"/>
+               />
+<!--            android:checked="true"-->
 
             <RadioButton
                 android:id="@+id/chooseBig"

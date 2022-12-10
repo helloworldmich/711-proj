@@ -12,4 +12,7 @@
     <item
         android:id="@+id/store_locations"
         android:title="Store Locators" />
+    <item
+        android:id="@+id/cutomer_profile"
+        android:title="Profile" />
 </menu>

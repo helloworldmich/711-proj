@@ -8,6 +8,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,6 +49,12 @@ class MainActivity : AppCompatActivity() {
             R.id.store_locations -> {
                 setContentView(R.layout.activity_store_locator)
                 val i = Intent(this@MainActivity, StoreLocatorActivity::class.java)
+                startActivity(i)
+
+            }
+            R.id.cutomer_profile -> {
+                setContentView(R.layout.activity_customer_profile)
+                val i = Intent(this@MainActivity, CustomerProfileActivity::class.java)
                 startActivity(i)
 
             }

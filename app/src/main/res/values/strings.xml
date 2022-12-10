@@ -15,7 +15,6 @@
     <string name="already_have_an_account_login_now" />
 
 
-
     <string-array name="cardTypes">
         <item>Visa</item>
         <item>MasterCard</item>
