@@ -354,8 +354,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Get Receipt"
+        android:onClick="writeFile"
         />
-<!--    android:onClick="writeFile"-->
+
 
     <Button
         android:id="@+id/finish_button"
