@@ -206,12 +206,6 @@
         android:text="Place your order"
         android:onClick="placeOrder"/>
 
-    <Button
-        android:id="@+id/output_order"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Get Receipt" />
-
     <!--android:text="@string/button_place_order"-->
 <!--    android:onClick="placeOrder"-->
 </LinearLayout>

@@ -347,9 +347,15 @@
             android:inputType="textPersonName"
             android:textSize="24sp" />
 
-
-
     </LinearLayout>
+
+    <Button
+        android:id="@+id/writefile_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Get Receipt"
+        />
+<!--    android:onClick="writeFile"-->
 
     <Button
         android:id="@+id/finish_button"

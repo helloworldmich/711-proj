@@ -1,10 +1,17 @@
 package com.example.a711_proj
 
+import android.content.Context
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
+import android.widget.EditText
+import android.widget.RadioGroup
 import android.widget.TextView
+import android.widget.Toast
+import java.io.IOException
+import java.util.logging.Logger
 
 class ViewOrderActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -12,11 +19,19 @@ class ViewOrderActivity : AppCompatActivity() {
         setContentView(R.layout.activity_view_order)
         getSummary()
     }
-
+    var name = ""
+    var address = " "
+    var city = ""
+    var postalCode = ""
+    var phoneNumber = ""
+    var creditCard = ""
+    var cardType = ""
+    var expirationDate = ""
+    var cvv = ""
     fun getSummary (){
         val sharedPref: SharedPreferences = this.getSharedPreferences("MyPref", MODE_PRIVATE)
         val pizzaName = sharedPref.getString("pizza name", "")
-        val size = sharedPref.getString("size", "")
+        val sizeChosen = sharedPref.getString("size", "")
 //        val toppings = sharedPref.getString("phoneModel", "")
         val totalPrice = sharedPref.getString("total", "")
         val smashed_potato = sharedPref.getString("smashed potato", "")
@@ -27,21 +42,21 @@ class ViewOrderActivity : AppCompatActivity() {
         val sideDishes = "$no_side_dishes $smashed_potato \n $garlic_bread \n $house_salad \n $mushroom_salad \n"
 
         // get contact information
-        val name = sharedPref.getString("name", "")
-        val address = sharedPref.getString("address", "")
-        val city = sharedPref.getString("city", "")
-        val postalCode = sharedPref.getString("postalCode", "")
-        val phoneNumber = sharedPref.getString("telephone", "")
+         name = sharedPref.getString("name", "").toString()
+         address = sharedPref.getString("address", "").toString()
+         city = sharedPref.getString("city", "").toString()
+         postalCode = sharedPref.getString("postalCode", "").toString()
+         phoneNumber = sharedPref.getString("telephone", "").toString()
         // get payment information
-        val creditCard = sharedPref.getString("cardNumber", "")
-        val cardType = sharedPref.getString("cardType", "")
-        val expirationDate = sharedPref.getString("cardExpiry", "")
-        val cvv = sharedPref.getString("cardCvv", "")
+         creditCard = sharedPref.getString("cardNumber", "").toString()
+         cardType = sharedPref.getString("cardType", "").toString()
+         expirationDate = sharedPref.getString("cardExpiry", "").toString()
+         cvv = sharedPref.getString("cardCvv", "").toString()
 
 
         //display chosen food
         findViewById<TextView>(R.id.pizzaName).text = pizzaName
-        findViewById<TextView>(R.id.size).text = size
+        findViewById<TextView>(R.id.size).text = sizeChosen
 //        findViewById<TextView>(R.id.toppings).text = toppings
         findViewById<TextView>(R.id.total).text = totalPrice
         findViewById<TextView>(R.id.sideDishes).text = sideDishes
@@ -65,4 +80,36 @@ class ViewOrderActivity : AppCompatActivity() {
 
 
     }
+    val Log = Logger.getLogger(ViewOrderActivity::class.java.name)
+
+//    var writeFile = findViewById<View>(R.id.writefile_button) as Button
+//    writeFile.setOnclickListener{
+
+        fun writeFile() {
+        val filename = "receipt.txt"
+//        val txtinput: EditText =findViewById(R.id.txtInput)
+        val orderSummaryText = "Thank You For Your Order! \n $name  \n  $address  \n $city  \n $postalCode  \n $phoneNumber  \n $creditCard   \n $cardType"
+        Thread(Runnable {
+            try {
+                val out = openFileOutput(filename, Context.MODE_PRIVATE)
+                out.use {
+                    out.write(orderSummaryText.toByteArray())     //txtinput!!.text.toString()
+                }
+                runOnUiThread(Runnable {
+                    Toast.makeText(this,"Saved", Toast.LENGTH_LONG).show()
+                })
+            }
+            catch(ioe: IOException) {
+                Log.warning("Error while saving ${filename} : ${ioe}")
+            }
+        }).start()
+    }
+
+
+    override fun onPause() {
+        super.onPause()
+        writeFile()
+    }
+
+
 }
