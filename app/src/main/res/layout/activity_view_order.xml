@@ -45,18 +45,18 @@
             android:text="Pizza:   "
             android:textSize="24sp" />
 
-    <TextView
-        android:id="@+id/pizzaName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="(pizza)"
-        android:textSize="24sp" />
+        <TextView
+            android:id="@+id/pizzaName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(pizza)       "
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/size"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="(size)"
+            android:text="(size)       "
             android:textSize="24sp" />
 </LinearLayout>
 

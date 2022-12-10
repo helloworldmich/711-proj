@@ -146,23 +146,27 @@ class OrderActivity : AppCompatActivity() {
         var result = ""
         var ingredients = ""
 
-        val sharedPref: SharedPreferences = this.getSharedPreferences("MyPref", MODE_PRIVATE)
-        val editor: SharedPreferences.Editor = sharedPref.edit()
-
         //handling radio buttons for sizes and caculate total price
         val group2 = findViewById<View>(R.id.radioGroup2) as RadioGroup
         group2.setOnCheckedChangeListener {group2, checkedId ->
+            val sharedPref: SharedPreferences = this.getSharedPreferences("MyPref", MODE_PRIVATE)
+            val editor: SharedPreferences.Editor = sharedPref.edit()
             if (checkedId != -1) {
                 val size = findViewById<View>(checkedId) as RadioButton
                 if (size.text == "Small(12')") {
                     total = 18
-                    editor.putString("size","Small")
+                    editor.putString("size","   Small")
+                    println(size.text)
                 } else if (size.text == "Large(16')") {
                     total = 22
-                    editor.putString("size","Large")
+                    editor.putString("size","  Large")
+                    println(size.text)
                 }
             }
+            editor.commit()
         }
+        val sharedPref: SharedPreferences = this.getSharedPreferences("MyPref", MODE_PRIVATE)
+        val editor: SharedPreferences.Editor = sharedPref.edit()
 
         if (view is CheckBox ) {
             val checked: Boolean = view.isChecked

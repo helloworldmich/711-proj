@@ -41,6 +41,9 @@ class ViewOrderActivity : AppCompatActivity() {
         val no_side_dishes = sharedPref.getString("no side dishes", "")
         val sideDishes = "$no_side_dishes $smashed_potato \n $garlic_bread \n $house_salad \n $mushroom_salad \n"
 
+        println(pizzaName)
+
+        println(sizeChosen)
         // get contact information
          name = sharedPref.getString("name", "").toString()
          address = sharedPref.getString("address", "").toString()
@@ -60,7 +63,7 @@ class ViewOrderActivity : AppCompatActivity() {
 //        findViewById<TextView>(R.id.toppings).text = toppings
         findViewById<TextView>(R.id.total).text = totalPrice
         findViewById<TextView>(R.id.sideDishes).text = sideDishes
-
+print(findViewById<TextView>(R.id.size).text)
 //        findViewById<TextView>(R.id.smashedPotato).text = smashed_potato   // snake case in order activity only
 //        findViewById<TextView>(R.id.garlicBread).text = garlic_bread
 //        findViewById<TextView>(R.id.houseSalad).text = house_salad
