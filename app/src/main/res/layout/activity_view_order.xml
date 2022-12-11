@@ -355,6 +355,7 @@
         android:layout_height="wrap_content"
         android:text="Get Receipt"
         android:onClick="writeFile"
+
         />
 
 
