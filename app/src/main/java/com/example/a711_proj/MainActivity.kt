@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
 
         }
 //        editor.commit()
-        startActivity(intent)
+//        startActivity(intent)
         return true
     }
 
