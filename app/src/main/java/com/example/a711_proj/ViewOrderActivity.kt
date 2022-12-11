@@ -88,7 +88,7 @@ print(findViewById<TextView>(R.id.size).text)
 //    var writeFile = findViewById<View>(R.id.writefile_button) as Button
 //    writeFile.setOnclickListener{
 
-        fun writeFile() {
+        fun writeFile(view: View) {
         val filename = "receipt.txt"
 //        val txtinput: EditText =findViewById(R.id.txtInput)
         val orderSummaryText = "Thank You For Your Order! \n $name  \n  $address  \n $city  \n $postalCode  \n $phoneNumber  \n $creditCard   \n $cardType"
@@ -111,8 +111,9 @@ print(findViewById<TextView>(R.id.size).text)
 
     override fun onPause() {
         super.onPause()
-        writeFile()
+    //     writeFile()
     }
+
 
 
 }
