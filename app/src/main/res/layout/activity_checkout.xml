@@ -7,219 +7,265 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".CheckoutActivity">
+
     <TextView
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="@dimen/padding_5"
         android:text="Delivery Information"
+        android:textAlignment="center"
         android:textSize="34sp"
         android:textStyle="bold" />
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal">
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Name"
-        android:textSize="24sp" />
 
-    <EditText
-        android:id="@+id/name"
+    <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName" />
+        android:layout_height="wrap_content">
 
-</LinearLayout>
+        <TableRow>
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="120dp"
+                android:text="Name"
+                android:padding="10dp"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName|textCapCharacters"
+                android:maxLength="20" />
+        </TableRow>
 
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:id="@+id/textView13"
+        <TableRow
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Address"
-            android:textSize="24sp" />
+            android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/address"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName" />
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="Address"
+                android:textSize="24sp" />
 
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/textView15"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="City"
-            android:textSize="24sp" />
-
-        <EditText
-            android:id="@+id/city"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName" />
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:id="@+id/textView16"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Postal Code"
-            android:textSize="24sp" />
-
-        <EditText
-            android:id="@+id/postalCode"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName" />
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:id="@+id/textView17"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Telephone"
-            android:textSize="24sp" />
-
-        <EditText
-            android:id="@+id/telephone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName" />
+            <EditText
+                android:id="@+id/address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text"
+                android:maxLength="20"
+                android:padding="10dp" />
+        </TableRow>
 
 
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/textView18"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Card Number"
-            android:textSize="24sp" />
-
-        <EditText
-            android:id="@+id/cardNumber"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/textView19"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Card Type:"
-            android:textSize="24sp" />
-
-        <Spinner
-            android:id="@+id/cardType"
+        <TableRow
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:entries="@array/cardTypes"
-            android:scrollbarSize="6dp" />
+            android:orientation="horizontal">
 
-        />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="City"
 
-        <TextView
-            android:id="@+id/textView20"
-            android:layout_width="match_parent"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/city"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text|textAutoCorrect"
+                android:maxLength="14"
+                android:padding="10dp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Expiry Date(mm/yy)"
-            android:textSize="24sp" />
+            android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/cardExpiry"
-            android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="Postal Code"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/postalCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPostalAddress"
+                android:maxLength="7"
+                android:padding="10dp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName" />
+            android:orientation="horizontal">
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="Telephone"
+                android:textSize="24sp" />
 
-    <LinearLayout
-        android:id="@+id/button_place_order"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+            <EditText
+                android:id="@+id/telephone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="phone"
+                android:maxLength="10"
+                android:padding="10dp" />
 
-        <TextView
-            android:id="@+id/textView21"
-            android:layout_width="match_parent"
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="CVV"
-            android:textSize="24sp" />
+            android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/cardCVV"
-            android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="Card Number"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/cardNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:maxLength="16"
+                android:padding="10dp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="Card Type:"
+                android:textSize="24sp" />
+
+            <Spinner
+                android:id="@+id/cardType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/cardTypes"
+                android:padding="10dp"
+                android:scrollbarSize="6dp" />
+
+            />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="Expiry Date(mm/yy)"
+                android:textSize="24sp" />
 
 
+            <EditText
+                android:id="@+id/cardExpiry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="5"
+                android:padding="10dp" />
 
-    </LinearLayout>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/button_place_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="CVV"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/cardCVV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:maxLength="3"
+                android:padding="10dp" />
+        </TableRow>
+
+    </TableLayout>
 
     <Button
         android:id="@+id/submitButton"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="Place your order"
-        android:onClick="placeOrder"/>
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/button"
+        android:onClick="placeOrder"
+        android:text="Place your order" />
 
     <Button
         android:id="@+id/saveDataForAutoFill"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="Save Delivery Information for next time"
-        android:onClick="onClickSaveForAutoFill"/>
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/button"
+        android:text="Save details for future"
+        android:onClick="onClickSaveForAutoFill" />
+
 
     <Button
         android:id="@+id/autoFill"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
         android:text="Auto fill"
         android:onClick="autoFill"
-        />
+        android:backgroundTint="@color/button"/>
+
     <!--android:text="@string/button_place_order"-->
-<!--    android:onClick="placeOrder"-->
+    <!--    android:onClick="placeOrder"-->
 </LinearLayout>
