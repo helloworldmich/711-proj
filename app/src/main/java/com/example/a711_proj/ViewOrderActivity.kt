@@ -85,12 +85,10 @@ print(findViewById<TextView>(R.id.size).text)
     }
     val Log = Logger.getLogger(ViewOrderActivity::class.java.name)
 
-//    var writeFile = findViewById<View>(R.id.writefile_button) as Button
-//    writeFile.setOnclickListener{
 
-        fun writeFile(view: View) {
+        fun writeFile(view: View) {  //wired thing is i did add view:View before, but that doesn't make it work!!!
         val filename = "receipt.txt"
-//        val txtinput: EditText =findViewById(R.id.txtInput)
+
         val orderSummaryText = "Thank You For Your Order! \n $name  \n  $address  \n $city  \n $postalCode  \n $phoneNumber  \n $creditCard   \n $cardType"
         Thread(Runnable {
             try {
@@ -111,7 +109,7 @@ print(findViewById<TextView>(R.id.size).text)
 
     override fun onPause() {
         super.onPause()
-    //     writeFile()
+    //     writeFile()          --------->why should not have ???????
     }
 
 

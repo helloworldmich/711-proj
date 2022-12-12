@@ -207,11 +207,19 @@
         android:onClick="placeOrder"/>
 
     <Button
-        android:id="@+id/reaCache"
+        android:id="@+id/saveDataForAutoFill"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Save Delivery Information for next time" />
+        android:text="Save Delivery Information for next time"
+        android:onClick="onClickSaveForAutoFill"/>
 
+    <Button
+        android:id="@+id/autoFill"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Auto fill"
+        android:onClick="autoFill"
+        />
     <!--android:text="@string/button_place_order"-->
 <!--    android:onClick="placeOrder"-->
 </LinearLayout>

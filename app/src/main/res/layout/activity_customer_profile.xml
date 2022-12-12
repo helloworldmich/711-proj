@@ -94,14 +94,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Show" />
+            android:text="Show"
+            />
+<!--        android:onClick="onShowBtnCliked"-->
 
         <Button
             android:id="@+id/btnAdd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Add" />
+            android:text="Add"
+            />
+<!--        android:onClick="onAddBtnClicked"-->
     </LinearLayout>
 
 <LinearLayout
@@ -120,5 +124,9 @@
         android:id="@+id/writeCache"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Save Delivery Information for next time" />
+        android:text="Save Delivery Information for next time"
+        android:onClick="writeCache"
+        />
+
+
 </LinearLayout>
