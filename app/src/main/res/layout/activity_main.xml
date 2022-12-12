@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,20 +12,15 @@
         android:layout_height="wrap_content"
         android:text="Pi-Pi-Pizza!"
         android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.832" />
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center_horizontal" />
 
     <ImageView
         android:id="@+id/logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/logo"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="163dp" />
+        app:srcCompat="@drawable/logo" />
 
     <Button
         android:id="@+id/loginOnLaunchScreen"
@@ -33,7 +28,8 @@
         android:layout_height="wrap_content"
         android:text="Login to plcae order"
         android:onClick="navigateToLogin"
-        tools:layout_editor_absoluteX="99dp"
-        tools:layout_editor_absoluteY="623dp" />
+        android:backgroundTint="@color/button"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

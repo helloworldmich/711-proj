@@ -25,6 +25,7 @@
             android:layout_marginRight="@dimen/padding_5"
             android:layout_marginLeft="@dimen/padding_5"
             android:onClick="onClickNormal"
+            android:backgroundTint="@color/button"
             android:text="@string/normal" />
 
         <Button
@@ -33,6 +34,7 @@
             android:layout_marginRight="@dimen/padding_5"
             android:layout_marginLeft="@dimen/padding_5"
             android:onClick="onSatelliteMap"
+            android:backgroundTint="@color/button"
             android:text="@string/satellite" />
 
         <Button
@@ -41,6 +43,7 @@
             android:layout_marginRight="@dimen/padding_5"
             android:layout_marginLeft="@dimen/padding_5"
             android:onClick="onHybridMap"
+            android:backgroundTint="@color/button"
             android:text="@string/hybrid" />
 
         <Button
@@ -50,6 +53,7 @@
             android:layout_marginLeft="@dimen/padding_5"
             android:layout_marginBottom="@dimen/padding_5"
             android:onClick="onTerrainMap"
+            android:backgroundTint="@color/button"
             android:text="@string/terrain" />
 
     </LinearLayout>
