@@ -71,19 +71,24 @@ class CheckoutActivity : AppCompatActivity() {
     val cvv = findViewById<EditText>(R.id.cardCVV)
     // get card type from spinner
     val cardTypeText = findViewById<android.widget.Spinner>(R.id.cardType).selectedItem.toString()
+        val arr = arrayOf<String>(name!!.text.toString(), address!!.text.toString(),city!!.text.toString(),postalCode!!.text.toString(), phoneNumber!!.text.toString(),creditCard!!.text.toString()  )
+val writeString = name!!.text.toString()+","+  address!!.text.toString()+","+ city!!.text.toString()+","+postalCode!!.text.toString() +","+ phoneNumber!!.text.toString()+","+creditCard!!.text.toString()
 
-    val filename = "autoFillInfo.txt"
+        val filename = "autoFillInfo.txt"
     Thread(Runnable {
         try {
             val out = openFileOutput(filename, Context.MODE_PRIVATE)
             out.use {
-                out.write(name!!.text.toString().toByteArray())
-                out.write(address!!.text.toString().toByteArray())
-                out.write(city!!.text.toString().toByteArray())
-                out.write(postalCode!!.text.toString().toByteArray())
-                out.write(phoneNumber!!.text.toString().toByteArray())
-                out.write(creditCard!!.text.toString().toByteArray())
-                out.write(cardTypeText!!.toByteArray())
+//                out.write(arr.toString().toByteArray())
+//                println(arr.toString())
+                out.write(writeString.toByteArray())
+//                out.write(name!!.text.toString().toByteArray())
+//                out.write(address!!.text.toString().toByteArray())
+//                out.write(city!!.text.toString().toByteArray())
+//                out.write(postalCode!!.text.toString().toByteArray())
+//                out.write(phoneNumber!!.text.toString().toByteArray())
+//                out.write(creditCard!!.text.toString().toByteArray())
+//                out.write(cardTypeText!!.toByteArray())
             }
             runOnUiThread(Runnable {
                 Toast.makeText(this,"Saved", Toast.LENGTH_LONG).show()
@@ -115,18 +120,27 @@ class CheckoutActivity : AppCompatActivity() {
                 input.use {
                     var buffer = StringBuilder()
                     var bytes_read = input.read()
-
+                    var mString = arrayOf<String>()
                     while(bytes_read != -1) {
                         buffer.append(bytes_read.toChar())
                         bytes_read = input.read()
+
+                         mString = buffer.toString()!!.split(",").toTypedArray()
+                        println(mString)
                     }
                     runOnUiThread(Runnable{
-                        name!!.setText(buffer.toString())
-                        address!!.setText(buffer.toString())
-                        city!!.setText(buffer.toString())
-                        postalCode!!.setText(buffer.toString())
-                        phoneNumber!!.setText(buffer.toString())
-                        creditCard!!.setText(buffer.toString())
+                        name!!.setText(mString[0])
+                        address!!.setText(mString[1])
+                        city!!.setText(mString[2])
+                        postalCode!!.setText(mString[3])
+                        phoneNumber!!.setText(mString[4])
+                        creditCard!!.setText(mString[5])
+//                        name!!.setText(buffer.toString())
+//                        address!!.setText(buffer.toString())
+//                        city!!.setText(buffer.toString())
+//                        postalCode!!.setText(buffer.toString())
+//                        phoneNumber!!.setText(buffer.toString())
+//                        creditCard!!.setText(buffer.toString())
 //                        cardTypeText!!.selectedItem.toString()(buffer.toString())
                     })
                 }
