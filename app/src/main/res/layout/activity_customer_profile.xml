@@ -9,10 +9,10 @@
 
     <TextView
         android:id="@+id/textView17"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#CDDC39"
-        android:text="Please fill in your delivery information"
+        android:background="#D2D667"
+        android:text="Enter your delivery information"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold" />
@@ -91,18 +91,24 @@
 
         <Button
             android:id="@+id/btnShow"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:padding="@dimen/padding_5"
+            android:layout_marginLeft="50dp"
+            android:layout_gravity="center_horizontal"
+            android:backgroundTint="@color/button"
             android:text="Show"
             />
 <!--        android:onClick="onShowBtnCliked"-->
 
         <Button
             android:id="@+id/btnAdd"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:padding="@dimen/padding_5"
+            android:layout_marginLeft="100dp"
+            android:layout_gravity="center_horizontal"
+            android:backgroundTint="@color/button"
             android:text="Add"
             />
 <!--        android:onClick="onAddBtnClicked"-->
@@ -111,6 +117,7 @@
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
     android:orientation="horizontal">
 
 </LinearLayout>
@@ -122,9 +129,11 @@
 
     <Button
         android:id="@+id/writeCache"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save Delivery Information for next time"
+        android:layout_gravity="center_horizontal"
+        android:text="Save Info for future use"
+        android:backgroundTint="@color/button"
         android:onClick="writeCache"
         />
 

@@ -140,11 +140,10 @@
         android:textSize="24sp"
         android:textStyle="bold" />
 
-    <LinearLayout
+    <TableLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
+        android:layout_height="wrap_content">
+        <TableRow>
         <TextView
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
@@ -159,15 +158,16 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:textSize="24sp" />
+        </TableRow>
 
-    </LinearLayout>
 
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+<!--    <LinearLayout-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal">-->
 
+    <TableRow>
         <TextView
             android:id="@+id/textView13"
             android:layout_width="wrap_content"
@@ -183,12 +183,13 @@
             android:inputType="textPersonName"
             android:textSize="24sp" />
 
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+    </TableRow>
 
+<!--    <LinearLayout-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal">-->
+    <TableRow>
         <TextView
             android:id="@+id/textView15"
             android:layout_width="match_parent"
@@ -204,12 +205,12 @@
             android:inputType="textPersonName"
             android:textSize="24sp" />
 
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
+    </TableRow>
+<!--    <LinearLayout-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal">-->
+    <TableRow>
         <TextView
             android:id="@+id/textView16"
             android:layout_width="match_parent"
@@ -225,12 +226,12 @@
             android:inputType="textPersonName"
             android:textSize="24sp" />
 
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
+    </TableRow>
+<!--    <LinearLayout-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal">-->
+    <TableRow>
         <TextView
             android:id="@+id/textView17"
             android:layout_width="match_parent"
@@ -247,12 +248,12 @@
             android:textSize="24sp" />
 
 
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
+    </TableRow>
+<!--    <LinearLayout-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal">-->
+    <TableRow>
         <TextView
             android:id="@+id/textView18"
             android:layout_width="match_parent"
@@ -267,13 +268,13 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:textSize="24sp" />
-    </LinearLayout>
+    </TableRow>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
+<!--    <LinearLayout-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal">-->
+    <TableRow>
         <TextView
             android:id="@+id/textView19"
             android:layout_width="match_parent"
@@ -289,17 +290,18 @@
             android:textSize="24sp" />
         <!--            android:entries="@array/cardTypes"-->
         />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+    </TableRow>
 
+<!--    <LinearLayout-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal">-->
+    <TableRow>
         <TextView
             android:id="@+id/textView20"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Expiry Date(mm/yy):  "
+            android:text="Expiry Date:  "
             android:textSize="24sp" />
 
         <TextView
@@ -309,14 +311,14 @@
             android:text="                 "
             android:textSize="24sp" />
 
-    </LinearLayout>
+    </TableRow>
 
-    <LinearLayout
-        android:id="@+id/button_place_order"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
+<!--    <LinearLayout-->
+<!--        android:id="@+id/button_place_order"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal">-->
+    <TableRow>
         <TextView
             android:id="@+id/textView21"
             android:layout_width="match_parent"
@@ -331,8 +333,8 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:textSize="24sp" />
-
-    </LinearLayout>
+    </TableRow>
+    </TableLayout>
 
     <Button
         android:id="@+id/writefile_button"
